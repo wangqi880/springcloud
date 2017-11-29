@@ -2,6 +2,7 @@
 <configuration>
 
 <property name="DEV_HOME" value="." />
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <!-- 控制台输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
