@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/index")
@@ -48,4 +49,27 @@ public class IndexController {
         return user;
     }
 
+    @RequestMapping(value = "/alluser")
+    public Object alluser(){
+        List<User> list =  userService.queryByall();
+        BaseResponse resp  = new BaseResponse();
+        resp.setCode(CodeConstraint.SUCCESS);
+        resp.setData(list);
+        resp.setInfo("srucee");
+        User user = new User();
+        user.setUsername("nihao");
+        user.setPassword("dajiahao");
+        userService.insert(user);
+        return resp;
+    }
+
+    @RequestMapping(value = "/userinfo/{id}")
+    public Object userinfo(@PathVariable String id){
+        BaseResponse resp  = new BaseResponse();
+        resp.setInfo("success");
+        resp.setCode(CodeConstraint.SUCCESS);
+        User user = userService.queryById(id);
+        resp.setData(user);
+        return resp;
+    }
 }
