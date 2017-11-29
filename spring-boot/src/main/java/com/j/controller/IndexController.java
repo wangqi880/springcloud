@@ -5,20 +5,22 @@ import com.j.common.CodeConstraint;
 import com.j.model.User;
 import com.j.model.UserRequest;
 import com.j.service.UserService;
-import com.sun.org.apache.bcel.internal.util.InstructionFinder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.List;
 
 @RestController
 @RequestMapping("/index")
 public class IndexController {
 
+    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
     @Autowired
     UserService userService;
@@ -36,7 +38,7 @@ public class IndexController {
         response.setCode(CodeConstraint.SUCCESS);
         response.setInfo("success");
         response.setData(user);
-
+        logger.info("调用成功");
         return response;
     }
     // @PathVariable 获得请求url中的动态参数
