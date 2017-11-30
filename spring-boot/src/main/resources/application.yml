@@ -1,22 +1,19 @@
 logging:
   level: info
-#mybatis≈‰÷√
 mybatis:
   type-aliases-package: com.j.model
   mapper-locations: classpath:mybatis/mapper/*.xml
 
-#jdbc≈‰÷√
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
-#thymeleaf≈‰÷√
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
-    mode: HTML5
+    mode: LEGACYHTML5
     encoding: UTF-8
     content-type: text/html
     cache: false

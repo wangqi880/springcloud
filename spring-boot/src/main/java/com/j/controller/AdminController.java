@@ -1,15 +1,19 @@
 package com.j.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class AdminController {
 
     @RequestMapping("/admin")
-    public String  index(){
+    public String   index(Model model, HttpSession session){
 
-        return  "admin/admin";
+        model.addAttribute("message","wq");
+        session.setAttribute("name","王琪");
+        return  "adminView/admin";
     }
 }

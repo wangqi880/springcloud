@@ -16,6 +16,7 @@ public class AdminLoginInterceptor extends HandlerInterceptorAdapter {
        User user = (User) session.getAttribute("loginUser");
        user = new User();
        user.setUsername("wq");
+        session.setAttribute("loginUser",user);
         if(null==user){
             String s = request.getContextPath();
             response.sendRedirect(request.getContextPath()+"/login");
