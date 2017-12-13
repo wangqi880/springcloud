@@ -27,7 +27,7 @@ public class MyACtion
 	@RequestMapping("/miya")
 	public String info(){
 		LOG.log(Level.INFO, "info is being called");
-		return restTemplate.getForObject("http://localhost:8763/hi?name="+"miya",String.class);
+		return restTemplate.getForObject("http://localhost:8762/hi?name="+"miya",String.class);
 	}
 
 }

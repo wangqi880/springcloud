@@ -4,20 +4,23 @@ spring:
   cloud:
     config:
       label: master
-      profile: dev
+      profile: pro
       uri: http://localhost:8888/
       discovery:
         enabled: true
         service-id: CONFIG-SERVER
   rabbitmq:
-    host: localhost
-    port: 5672
+    host: 10.25.193.180
+    port: 18087
+    username: wq
+    password: wq
+    virtual-host: /dev/wq
 server:
   port: 8881
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://root:wangqi@localhost:8761/eureka
 management:
   security:
     enabled: false

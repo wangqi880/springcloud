@@ -5,10 +5,10 @@ eureka:
     hostname: localhost
   client:
     fetch-registry: false
-    registry-refresh-single-vip-address: false
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false
 security:
   user:
-    name: root
     password: wangqi
+    name: root

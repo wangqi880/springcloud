@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HiController
 {
+	@SuppressWarnings("SpringJavaAutowiringInspection")
 	@Autowired SchedualServiceHi schedualServiceHi;
 
 	@RequestMapping(value = "/hi")
